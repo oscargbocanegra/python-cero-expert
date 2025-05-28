@@ -34,7 +34,7 @@ jobs:
       - name: Test Docker Compose
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
-          compose-file: "./web-server/docker-compose.yml"
+          compose-file: "./projects/web-server/docker-compose.yml"
         
       
         #run: |
@@ -45,4 +45,3 @@ jobs:
         #  sleep 40
         #  curl -f http://localhost:8000 || echo "Web server health check"
         #  docker compose down
-        
