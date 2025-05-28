@@ -6,12 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      platform: linux
-      region: us-east-1
-      account: 123456789012
-      repository: my-web-server-repo
-
     steps:
       - uses: actions/checkout@v4
         
@@ -38,22 +32,30 @@ jobs:
           docker build -t web-server-test .
 
       - name: Test Docker Compose
-        uses: hoverkraft-tech/compose-action@v2.0.1
-        with:
-          compose-file: "./projects/web-server/docker-compose.yml"
-        
+        run: |
+          cd projects/web-server
+          docker compose config --quiet
+          docker compose build
+          docker compose up -d
+          sleep 40
+          curl -f http://localhost:8000 || echo "Web server health check"
+          docker compose down
+
+  environment-vars:
+    runs-on: ubuntu-latest
+    
+    env:
+      platform: linux
+      region: us-east-1
+      account: 123456789012
+      repository: my-web-server-repo
+
+    steps:
       - name: "Mostrando variables de entorno"
         run: |
           echo "Platform: ${{ env.platform }}"
           echo "Region: ${{ env.region }}"
           echo "Account: ${{ env.account }}"
           echo "Repository: ${{ env.repository }}"
-      
-        #run: |
-        #  cd projects/web-server
-        #  docker compose config --quiet
-        #  docker compose build
-        #  docker compose up -d
-        #  sleep 40
-        #  curl -f http://localhost:8000 || echo "Web server health check"
-        #  docker compose down
+
+
