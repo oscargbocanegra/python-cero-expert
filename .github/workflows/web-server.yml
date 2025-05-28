@@ -63,3 +63,8 @@ jobs:
             echo "Account: ${{ env.account }}"
             echo "Repository: ${{ env.repository }}"
 
+      - name: "Mostrando Eventos de Github"
+        run: |
+            echo "Evento github ${{ toJson(github.event ) }}"
+            echo "Variable GITHUB-ACTOR : $GITHUB_ACTOR"
+            echo "Variable GITHUB-REPOSITORY : $GITHUB_REPOSITORY"
