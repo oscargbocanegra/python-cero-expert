@@ -6,6 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      platform: linux
+      region: us-east-1
+      account: 123456789012
+      repository: my-web-server-repo
+
     steps:
       - uses: actions/checkout@v4
         
@@ -36,6 +42,12 @@ jobs:
         with:
           compose-file: "./projects/web-server/docker-compose.yml"
         
+      - name: "Mostrando variables de entorno"
+        run: |
+          echo "Platform: ${{ env.platform }}"
+          echo "Region: ${{ env.region }}"
+          echo "Account: ${{ env.account }}"
+          echo "Repository: ${{ env.repository }}"
       
         #run: |
         #  cd projects/web-server
