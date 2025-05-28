@@ -26,7 +26,17 @@ jobs:
           python -m pytest tests/ || echo "No tests directory found, running basic syntax check"
           python -c "import main; import store; print('Modules imported successfully')"
           
-      - name: Test Docker build (optional)
+      - name: Test Docker build
         run: |
           cd projects/web-server
           docker build -t web-server-test .
+
+      - name: Test Docker Compose
+        run: |
+          cd projects/web-server
+          docker-compose config --quiet
+          docker-compose build
+          docker-compose up -d
+          sleep 40
+          curl -f http://localhost:8000 || echo "Web server health check"
+          docker-compose down
