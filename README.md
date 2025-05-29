@@ -8,7 +8,6 @@ Un repositorio completo para aprender Python desde lo básico hasta conceptos av
 
 - [🚀 Proyectos](#-proyectos)
 - [🛠 Tecnologías](#-tecnologías)
-- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
 - [🔄 CI/CD](#-cicd)
 - [🎯 Roadmap](#-roadmap)
 - [🤝 Contribución](#-contribución)
@@ -35,24 +34,6 @@ Un repositorio completo para aprender Python desde lo básico hasta conceptos av
 - ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
 - ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)
 
-
-
-## 📁 Estructura de los Proyectos
-
-```
-python-cero-expert/
-├── 📁 projects/
-│   └── 📁 web-server/
-│       ├── 📄 main.py           # Aplicación principal
-│       ├── 📄 store.py          # Lógica de almacenamiento
-│       ├── 📄 Dockerfile        # Imagen Docker
-│       ├── 📄 docker-compose.yml
-│       └── 📄 requeriments.txt
-├── 📁 .github/
-│   └── 📁 workflows/
-│       └── 📄 web-server.yml    # CI/CD pipeline
-└── 📄 README.md
-```
 
 ## 🔄 CI/CD
 
