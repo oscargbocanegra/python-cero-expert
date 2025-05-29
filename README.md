@@ -40,7 +40,7 @@ Un repositorio completo para aprender Python desde lo básico hasta conceptos av
 Este repositorio incluye pipelines automatizados con GitHub Actions:
 
 ### Estado de los Workflows
-[![Project - Web Server](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml/badge.svg)](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml))
+[![Project - Web Server](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml/badge.svg)](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml)
 
 
 ## 🎯 Roadmap
