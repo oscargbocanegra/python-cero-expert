@@ -1,0 +1,22 @@
+# Python Turtle Graphics Learning Project - Requirements
+# 
+# This project uses only Python Standard Library modules:
+# - turtle (Graphics library - included with Python)
+# - time (Time-related functions - included with Python)  
+# - random (Random number generation - included with Python)
+#
+# Minimum Python Version Required: 3.6+
+#
+# No external packages need to be installed via pip.
+# All required modules are part of Python's standard library.
+#
+# To verify your Python installation includes turtle graphics:
+# python -c "import turtle; print('Turtle graphics available!')"
+#
+# If you want to add optional development dependencies, uncomment below:
+# 
+# Development Dependencies (Optional):
+# pytest>=6.0.0          # For unit testing
+# black>=21.0.0           # Code formatting
+# flake8>=3.8.0          # Code linting
+# mypy>=0.800            # Type checking
