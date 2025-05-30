@@ -52,114 +52,71 @@ cd python-cero-expert
 
 ### 🎯 Stack Tecnológico Principal
 
-<div style="margin: 30px 0;">
+<table>
+<tr>
+<td align="center" width="33%">
 
-<!-- Primera fila: 3 tarjetas -->
-<div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
-
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); box-shadow: 0 8px 32px rgba(30, 58, 138, 0.4); color: white; text-align: center;">
-
-### 🐍 Core Python
-
-<div style="margin: 15px 0;">
+**🐍 Core Python**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![AsyncIO](https://img.shields.io/badge/AsyncIO-1e40af?style=for-the-badge&logo=python&logoColor=white)
 ![OOP](https://img.shields.io/badge/OOP-2563eb?style=for-the-badge&logo=python&logoColor=white)
 
-</div>
+*Fundamentos y conceptos avanzados*
 
-*Fundamentos y conceptos avanzados de programación*
+</td>
+<td align="center" width="33%">
 
-</div>
-
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%); box-shadow: 0 8px 32px rgba(30, 64, 175, 0.4); color: white; text-align: center;">
-
-### 🌐 Web Development
-
-<div style="margin: 15px 0;">
+**🌐 Web Development**
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-1e40af?style=for-the-badge&logo=fastapi&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-3b82f6?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-2563eb?style=for-the-badge&logo=css3&logoColor=white)
 
-</div>
-
 *APIs REST modernas y tecnologías web*
 
-</div>
+</td>
+<td align="center" width="33%">
 
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); box-shadow: 0 8px 32px rgba(37, 99, 235, 0.4); color: white; text-align: center;">
-
-### 🎮 Game Development
-
-<div style="margin: 15px 0;">
+**🎮 Game Development**
 
 ![Pygame](https://img.shields.io/badge/Pygame-1d4ed8?style=for-the-badge&logo=python&logoColor=white)
 ![Turtle Graphics](https://img.shields.io/badge/Turtle_Graphics-2563eb?style=for-the-badge&logo=python&logoColor=white)
 
-</div>
+*Desarrollo de juegos y gráficos*
 
-*Desarrollo de juegos y gráficos interactivos*
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
 
-</div>
-
-</div>
-
-<!-- Segunda fila: 3 tarjetas -->
-<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4); color: white; text-align: center;">
-
-### 📚 Standard Libraries
-
-<div style="margin: 15px 0;">
+**📚 Standard Libraries**
 
 ![Random](https://img.shields.io/badge/Random-3b82f6?style=for-the-badge&logo=python&logoColor=white)
 ![Time](https://img.shields.io/badge/Time-2563eb?style=for-the-badge&logo=python&logoColor=white)
 ![Collections](https://img.shields.io/badge/Collections-1d4ed8?style=for-the-badge&logo=python&logoColor=white)
 
-</div>
+*Librerías integradas de Python*
 
-*Librerías integradas de Python estándar*
+</td>
+<td align="center" width="33%">
 
-</div>
-
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%); box-shadow: 0 8px 32px rgba(30, 64, 175, 0.4); color: white; text-align: center;">
-
-### 🔧 DevOps & Tools
-
-<div style="margin: 15px 0;">
+**🔧 DevOps & Tools**
 
 ![Docker](https://img.shields.io/badge/Docker-2563eb?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-1e40af?style=for-the-badge&logo=github-actions&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-3b82f6?style=for-the-badge&logo=pytest&logoColor=white)
 
-</div>
+*Automatización y testing*
 
-*Automatización, testing y contenedorización*
+</td>
+<td align="center" width="33%">
 
-</div>
+<!-- Espacio libre para futuras tecnologías -->
 
-<div style="flex: 0 1 300px; padding: 25px; border-radius: 15px; background: linear-gradient(135deg, #334155 0%, #475569 100%); box-shadow: 0 8px 32px rgba(51, 65, 85, 0.4); color: white; text-align: center;">
-
-### 📊 Niveles de Dificultad
-
-<div style="margin: 15px 0; font-size: 18px;">
-
-🟢 **Principiante**  
-🟡 **Intermedio**  
-🔴 **Avanzado**  
-
-</div>
-
-*Progresión educativa estructurada*
-
-</div>
-
-</div>
-
-</div>
+</td>
+</tr>
+</table>
 
 </div>
 
