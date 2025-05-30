@@ -148,6 +148,7 @@ Este repositorio incluye pipelines automatizados con GitHub Actions:
 - [Python.org](https://docs.python.org/3/) - Documentación oficial de Python
 - [FastAPI](https://fastapi.tiangolo.com/) - Documentación de FastAPI
 - [Pygame](https://www.pygame.org/docs/) - Documentación de Pygame
+- [Unitest](https://docs.python.org/3/library/unittest.html) - Documentación de testing para Python.
 
 ### 🎯 Mejores Prácticas Aplicadas
 - **PEP 8**: Estilo de código Python en todos los proyectos
@@ -161,7 +162,7 @@ Este repositorio incluye pipelines automatizados con GitHub Actions:
 - **Gestión de Dependencias**: pip, venv, requirements.txt
 - **Control de Versiones**: Git con commits descriptivos
 - **Containerización**: Docker para proyectos web
-- **Testing**: pytest para pruebas automatizadas
+- **Testing**: pytest para pruebas automatizadas 
 
 
 <!--
