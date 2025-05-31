@@ -175,3 +175,6 @@ cython_debug/
 
 env-*/
 /env-*
+
+# VSCode settings
+projects/.vscode/

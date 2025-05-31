@@ -1,12 +1,14 @@
 import unittest
-import sys
 import os
+import sys
 
-# Agregar el directorio padre al path para que Python pueda encontrar src
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-
-from src.bank_account import BankAccount
+# Intentar import relativo primero, luego absoluto
+try:
+    from ..src.bank_account import BankAccount
+except ImportError:
+    # Si falla el import relativo, agregar el directorio padre al path
+    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+    from src.bank_account import BankAccount
 
 class BankAccountTest(unittest.TestCase):
 
@@ -49,6 +51,8 @@ class BankAccountTest(unittest.TestCase):
         self.account.deposit(200)
         assert self._count_lines(self.account.log_file) == 2
 
-    
+if __name__ == '__main__':
+    unittest.main()
 
-       
+
+
