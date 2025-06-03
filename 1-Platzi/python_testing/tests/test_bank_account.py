@@ -106,3 +106,18 @@ class BankAccountTest(unittest.TestCase):
         
         self.assertIn("weekends", str(context.exception))
 
+    
+    def test_deposit_multiple_amounts(self):
+
+        test_casese = [
+            {"ammount": 100, "expected": 1100},
+            {"ammount": 200, "expected": 1200},
+            {"ammount": 300, "expected": 1300},
+            {"ammount": 400, "expected": 1400}
+        ]
+        for case in test_casese:
+            with self.subTest(case=case):
+                self.account = BankAccount(balance=1000, log_file='transaction_log.txt')
+                new_balance = self.account.deposit(case["ammount"])
+                self.assertEqual(new_balance, case["expected"])
+                
