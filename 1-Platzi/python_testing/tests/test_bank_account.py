@@ -51,6 +51,28 @@ class BankAccountTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.account.deposit(-100)
 
+    @patch('src.bank_account.datetime')
+    def test_withdraw_negative_amount(self, mock_datetime):
+        """Test that withdrawing a negative amount raises ValueError"""
+        # Mock datetime to allow withdrawal (during allowed hours and weekday)
+        mock_datetime.now.return_value.hour = 10  # 10 AM
+        mock_datetime.now.return_value.weekday.return_value = 1  # Tuesday
+        
+        with self.assertRaises(ValueError) as context:
+            self.account.withdraw(-100)
+        self.assertIn("Withdrawal amount must be positive", str(context.exception))
+
+    @patch('src.bank_account.datetime')
+    def test_withdraw_zero_amount(self, mock_datetime):
+        """Test that withdrawing zero amount raises ValueError"""
+        # Mock datetime to allow withdrawal (during allowed hours and weekday)
+        mock_datetime.now.return_value.hour = 10  # 10 AM
+        mock_datetime.now.return_value.weekday.return_value = 1  # Tuesday
+        
+        with self.assertRaises(ValueError) as context:
+            self.account.withdraw(0)
+        self.assertIn("Withdrawal amount must be positive", str(context.exception))
+
     def test_transaction_log(self):
         self.account.deposit(200)
         assert os.path.exists('transaction_log.txt')
@@ -120,4 +142,4 @@ class BankAccountTest(unittest.TestCase):
                 self.account = BankAccount(balance=1000, log_file='transaction_log.txt')
                 new_balance = self.account.deposit(case["ammount"])
                 self.assertEqual(new_balance, case["expected"])
-                
+
