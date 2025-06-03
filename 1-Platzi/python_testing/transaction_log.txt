@@ -1,0 +1,32 @@
+Account created with initial balance: 1000
+Deposited: 100. New balance:1100 1100
+Account created with initial balance: 1000
+Deposited: 200. New balance:1200 1200
+Account created with initial balance: 1000
+Deposited: 300. New balance:1300 1300
+Account created with initial balance: 1000
+Deposited: 400. New balance:1400 1400
+Account created with initial balance: 1000
+Deposited: 100. New balance:1100 1100
+Account created with initial balance: 1000
+Deposited: 200. New balance:1200 1200
+Account created with initial balance: 1000
+Deposited: 300. New balance:1300 1300
+Account created with initial balance: 1000
+Deposited: 400. New balance:1400 1400
+Account created with initial balance: 1000
+Deposited: 100. New balance:1100 1100
+Account created with initial balance: 1000
+Deposited: 200. New balance:1200 1200
+Account created with initial balance: 1000
+Deposited: 300. New balance:1300 1300
+Account created with initial balance: 1000
+Deposited: 400. New balance:1400 1400
+Account created with initial balance: 1000
+Deposited: 100. New balance:1100 1100
+Account created with initial balance: 1000
+Deposited: 200. New balance:1200 1200
+Account created with initial balance: 1000
+Deposited: 300. New balance:1300 1300
+Account created with initial balance: 1000
+Deposited: 400. New balance:1400 1400
