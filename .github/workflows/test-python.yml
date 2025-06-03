@@ -1,0 +1,73 @@
+name: Python Testing - Platzi Course
+
+on:
+  push:
+    paths:
+      - '1-Platzi/python_testing/**'
+      - '.github/workflows/test-python.yml'
+  pull_request:
+    paths:
+      - '1-Platzi/python_testing/**'
+      - '.github/workflows/test-python.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11, 3.12]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov requests
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
+    - name: Run tests with pytest
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "🧪 Running all tests..."
+        python -m pytest tests/ -v --tb=short
+    
+    - name: Run tests with coverage
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "📊 Running tests with coverage report..."
+        python -m pytest tests/ --cov=src --cov-report=term-missing --cov-report=html -v
+    
+    - name: Display test results summary
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "✅ Test execution completed!"
+        echo "📁 Test files found:"
+        find tests/ -name "test_*.py" -type f
+        echo ""
+        echo "🐍 Source files covered:"
+        find src/ -name "*.py" -type f
+    
+    - name: Upload coverage reports
+      if: matrix.python-version == '3.12'
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: ./1-Platzi/python_testing/htmlcov/
+        retention-days: 5
+
+    - name: Comment coverage on PR
+      if: github.event_name == 'pull_request' && matrix.python-version == '3.12'
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "🎯 Coverage Summary:" >> coverage_summary.txt
+        python -m pytest tests/ --cov=src --cov-report=term-missing | grep -E "(TOTAL|Name)" >> coverage_summary.txt || true
+        cat coverage_summary.txt
