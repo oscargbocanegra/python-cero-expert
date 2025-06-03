@@ -16,14 +16,14 @@ jobs:
     
     strategy:
       matrix:
-        python-version: [3.9, 3.10, 3.11, 3.12]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
     
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     
@@ -34,11 +34,34 @@ jobs:
         pip install pytest pytest-cov requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
+    - name: Verify test environment
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "🔍 Test environment verification:"
+        echo "Python version: $(python --version)"
+        echo "Pytest version: $(python -m pytest --version)"
+        echo ""
+        echo "📁 Test files found:"
+        find tests/ -name "test_*.py" -type f || echo "No test files found"
+        echo ""
+        echo "🐍 Source files to test:"
+        find src/ -name "*.py" -type f || echo "No source files found"
+    
     - name: Run tests with pytest
       working-directory: ./1-Platzi/python_testing
       run: |
         echo "🧪 Running all tests..."
-        python -m pytest tests/ -v --tb=short
+        python -m pytest tests/ -v --tb=short --color=yes
+    
+    - name: Run individual test files
+      working-directory: ./1-Platzi/python_testing
+      run: |
+        echo "📋 Running tests by file..."
+        echo "🔍 API Client Tests:"
+        python -m pytest tests/test_api_client.py -v --tb=short --color=yes
+        echo ""
+        echo "🏦 Bank Account Tests:"
+        python -m pytest tests/test_bank_account.py -v --tb=short --color=yes
     
     - name: Run tests with coverage
       working-directory: ./1-Platzi/python_testing
@@ -58,7 +81,7 @@ jobs:
     
     - name: Upload coverage reports
       if: matrix.python-version == '3.12'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: coverage-report
         path: ./1-Platzi/python_testing/htmlcov/
