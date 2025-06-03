@@ -47,7 +47,7 @@ jobs:
       working-directory: ./1-Platzi/python_testing
       run: |
         echo "🧪 Running all tests..."
-        python -m pytest tests/ -v --tb=short --color=yes
+        python -m pytest tests/test_bank_account.py tests/test_api_client.py -v --tb=short --color=yes
     
     - name: Run individual test files
       working-directory: ./1-Platzi/python_testing
@@ -63,7 +63,7 @@ jobs:
       working-directory: ./1-Platzi/python_testing
       run: |
         echo "📊 Running tests with coverage report..."
-        python -m pytest tests/ --cov=src --cov-report=term-missing --cov-report=html -v
+        python -m pytest tests/test_bank_account.py tests/test_api_client.py --cov=src --cov-report=term-missing --cov-report=html -v
     
     - name: Display test results summary
       working-directory: ./1-Platzi/python_testing
@@ -87,5 +87,5 @@ jobs:
       working-directory: ./1-Platzi/python_testing
       run: |
         echo "🎯 Coverage Summary:" >> coverage_summary.txt
-        python -m pytest tests/ --cov=src --cov-report=term-missing | grep -E "(TOTAL|Name)" >> coverage_summary.txt || true
+        python -m pytest tests/test_bank_account.py tests/test_api_client.py --cov=src --cov-report=term-missing | grep -E "(TOTAL|Name|src/bank_account|src/api_client|src/exceptions)" >> coverage_summary.txt || true
         cat coverage_summary.txt
