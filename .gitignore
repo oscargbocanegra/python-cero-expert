@@ -178,3 +178,4 @@ env-*/
 
 # VSCode settings
 projects/.vscode/
+.vscode/
