@@ -9,7 +9,7 @@
 
 Un repositorio completo para aprender Python desde lo básico hasta conceptos avanzados con proyectos prácticos.
 
-## 🚀 Inicio Rápido
+## 🚀 Inicio Rápido.
 
 ### Prerrequisitos
 - Python 3.6 o superior
