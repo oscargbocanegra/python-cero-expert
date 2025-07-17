@@ -128,7 +128,7 @@ Este repositorio incluye pipelines automatizados con GitHub Actions:
 [![Project - Web Server](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml/badge.svg)](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml)
 
 
-## 🎯 Roadmap
+## 🎯 Roadmap.
 
 ### ✅ Completado (Q1 2025)
 - [x] ~~Configuración inicial del repositorio~~
