@@ -107,7 +107,7 @@ cd python-cero-expert
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-1e40af?style=for-the-badge&logo=github-actions&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-3b82f6?style=for-the-badge&logo=pytest&logoColor=white)
 
-*Automatización y testing*
+*Automatización y testing.*
 
 </td>
 <td align="center" width="33%">
@@ -122,7 +122,7 @@ cd python-cero-expert
 
 ## 🔄 CI/CD
 
-Este repositorio incluye pipelines automatizados con GitHub Actions:
+Este repositorio incluye pipelines automatizados con GitHub Actions: 
 
 ### Estado de los Workflows
 [![Project - Web Server](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml/badge.svg)](https://github.com/oscargbocanegra/python-cero-expert/actions/workflows/web-server.yml)
