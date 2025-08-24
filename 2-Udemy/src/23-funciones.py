@@ -1,9 +1,8 @@
-edad = 21
-
+edad: int = 21
 
 
 ## Llamando a una función.
-def solicitud_ingreso(edad):
+def solicitud_ingreso(edad: int) -> None:
     if edad < 10:
         print ('No Puedes Ingresar')
     elif edad >= 21:

@@ -5,26 +5,27 @@ from hotel_management.rooms import Room, RoomManagement
 from hotel_management.payments import process_payment
 from datetime import datetime
 
-async def main():
+
+async def main() -> None:
     # Inicializar sistemas
-    reservation_system = ReservationSystem()
-    customer_mgmt = CustomerManagement()
-    room_mgmt = RoomManagement()
+    reservation_system: ReservationSystem = ReservationSystem()
+    customer_mgmt: CustomerManagement = CustomerManagement()
+    room_mgmt: RoomManagement = RoomManagement()
 
     # Crear habitaciones
     room_mgmt.add_room(Room(101, "Single", 100))
     room_mgmt.add_room(Room(102, "Double", 150))
 
     # Agregar clientes
-    customer1 = Customer(1, "Alice", "alice@example.com")
+    customer1: Customer = Customer(1, "Alice", "alice@example.com")
     customer_mgmt.add_customer(customer1)
 
-    customer2 = Customer(2, "Bob", "bob@example.com")
+    customer2: Customer = Customer(2, "Bob", "bob@example.com")
     customer_mgmt.add_customer(customer2)
 
     # Verificar disponibilidad de habitaciones
     if room_mgmt.check_availability(101):
-        reservation = Reservation(1, "Alice", 101, datetime.now(), datetime.now())
+        reservation: Reservation = Reservation(1, "Alice", 101, datetime.now(), datetime.now())
         reservation_system.add_reservation(reservation)
 
         # Procesar pago asincrónicamente

@@ -1,22 +1,23 @@
-agenda_telefonica = dict()
+from typing import Dict, Optional
+
+agenda_telefonica: Dict[str, str] = dict()
 
 
-
-def imprimir_operacion(nombre_operacion):
+def imprimir_operacion(nombre_operacion: str) -> None:
     print ("\n---------- Agenda Telefonica ----------")
     print (nombre_operacion)
     print ("---------------------------------------\n")
 
-def agregar_contacto():
+def agregar_contacto() -> None:
     print()
-    nombre = input("Nombre del contacto: ").capitalize()
-    numero = input("Numero del contacto: ")
+    nombre: str = input("Nombre del contacto: ").capitalize()
+    numero: str = input("Numero del contacto: ")
     agenda_telefonica[nombre] = numero
     imprimir_operacion("* Contacto Agregado")
 
-def remover_contacto():
-    nombre = input("Nombre del contacto a remover: ").capitalize()
-    nombre_operacion = None
+def remover_contacto() -> None:
+    nombre: str = input("Nombre del contacto a remover: ").capitalize()
+    nombre_operacion: Optional[str] = None
 
     try:
         del agenda_telefonica[nombre]
@@ -27,16 +28,16 @@ def remover_contacto():
     imprimir_operacion(nombre_operacion)
 
 
-def actualizar_contacto():
-    nombre_operacion = None
-    nombre = input("Nombre del contacto a actualizar: ").capitalize()
-    numero = input("Nuevo Numero del contacto: ")
+def actualizar_contacto() -> None:
+    nombre_operacion: Optional[str] = None
+    nombre: str = input("Nombre del contacto a actualizar: ").capitalize()
+    numero: str = input("Nuevo Numero del contacto: ")
     agenda_telefonica[nombre] = numero
     imprimir_operacion("* Contacto Actualizado")
 
-def ver_contacto():
-    nombre = input("Nombre del contacto: ").capitalize()
-    nombre_operacion = None
+def ver_contacto() -> None:
+    nombre: str = input("Nombre del contacto: ").capitalize()
+    nombre_operacion: Optional[str] = None
     
     try:
         nombre_operacion = "{} - {}".format(nombre, agenda_telefonica[nombre])
@@ -45,8 +46,8 @@ def ver_contacto():
     imprimir_operacion(nombre_operacion)
 
 
-def ver_list_contactos():
-    nombre_operacion = None
+def ver_list_contactos() -> None:
+    nombre_operacion: Optional[str] = None
 
     if len(agenda_telefonica) == 0:
         nombre_operacion = "* No tienes ningun contacto"
@@ -58,7 +59,7 @@ def ver_list_contactos():
                 nombre_operacion += "\n{} - {}".format(contacto, agenda_telefonica[contacto])
     imprimir_operacion(nombre_operacion)
 
-def iniciar_agenda():
+def iniciar_agenda() -> None:
     print ("Bienvenido a mi Agenda Telefonica...")
     while True:
         print()
@@ -71,7 +72,7 @@ def iniciar_agenda():
         print()
 
         try:
-            operacion = int(input("Escoja Opcion : "))
+            operacion: int = int(input("Escoja Opcion : "))
         except ValueError:
             imprimir_operacion("* Selecciona un numero de 1 a 6")
         else:
@@ -90,7 +91,7 @@ def iniciar_agenda():
             else:
                 imprimir_operacion("* Operacion Desconocida")
 
-def dar_despedida():
+def dar_despedida() -> None:
     imprimir_operacion("* Gracias por usar nuestro servicio \nde Agendas Telefonicas")
 
 

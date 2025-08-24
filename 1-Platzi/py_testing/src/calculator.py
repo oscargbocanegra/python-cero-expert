@@ -1,4 +1,7 @@
-def sum(a,b):
+from typing import Union
+
+
+def sum(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
     """
     Sums two numbers.
     
@@ -11,7 +14,7 @@ def sum(a,b):
     """
     return a + b
 
-def subtract(a,b):
+def subtract(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
     """
     Subtracts the second number from the first.
     
@@ -24,7 +27,7 @@ def subtract(a,b):
     """
     return a - b
 
-def multiply(a,b):
+def multiply(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
     """
     Multiplies two numbers.
     
@@ -37,7 +40,7 @@ def multiply(a,b):
     """
     return a * b
 
-def divide(a,b):
+def divide(a: Union[int, float], b: Union[int, float]) -> float:
     """
     Divides the first number by the second.
     

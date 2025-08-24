@@ -4,7 +4,10 @@
 3. Realizar la operacion en base a la peticion del usuario. 4. Desplegar el resultado.
 5. Preguntar si quiere realizar otra operacion
 """
-def operacion_calc(operacion,numero1,numero2):
+from typing import Union
+
+
+def operacion_calc(operacion: int, numero1: Union[int, float], numero2: Union[int, float]) -> Union[int, float]:
     if operacion == 1:
         return numero1 + numero2
     elif operacion == 2:
@@ -25,9 +28,9 @@ while True:
     print ("4 - Division.")
 
     try:
-        operacion = int(input("Intruce la operacion a realizar: "))
-        numero1 = int(input("Introduce el primer numero: "))
-        numero2 = int(input("Introduce el segundo numero: "))
+        operacion: int = int(input("Intruce la operacion a realizar: "))
+        numero1: int = int(input("Introduce el primer numero: "))
+        numero2: int = int(input("Introduce el segundo numero: "))
     except:
         print ("Introduce solo Numeros")
     else:
@@ -35,9 +38,9 @@ while True:
             print ("\n !!! Esta Operacion No es valida Intenta nuevamente !!!!!!!!!!!!")
             continue
         
-        resultado  = operacion_calc(operacion,numero1,numero2)
+        resultado: Union[int, float] = operacion_calc(operacion, numero1, numero2)
         print ("El resultado es: " + str(resultado))
-        continuar = input("Deseas continuar? si/no : ")
+        continuar: str = input("Deseas continuar? si/no : ")
         print ()
         print ()
         
