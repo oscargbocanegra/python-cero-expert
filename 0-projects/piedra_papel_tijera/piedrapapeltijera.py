@@ -1,10 +1,11 @@
 import random
+from typing import List
 
 # Opciones disponibles
-opciones = ["piedra", "papel", "tijera"]
+opciones: List[str] = ["piedra", "papel", "tijera"]
 
 # Función para determinar el ganador
-def determinar_ganador(usuario, computadora):
+def determinar_ganador(usuario: str, computadora: str) -> str:
     if usuario == computadora:
         return "Empate"
     elif (usuario == "piedra" and computadora == "tijera") or \
@@ -17,7 +18,7 @@ def determinar_ganador(usuario, computadora):
 # Bucle principal del juego
 while True:
     # Elección del usuario
-    usuario = input("Elige piedra, papel o tijera (o 'salir' para terminar): ").lower()
+    usuario: str = input("Elige piedra, papel o tijera (o 'salir' para terminar): ").lower()
     
     if usuario == "salir":
         break
@@ -26,9 +27,9 @@ while True:
         continue
     
     # Elección de la computadora
-    computadora = random.choice(opciones)
+    computadora: str = random.choice(opciones)
     print(f"La computadora eligió: {computadora}")
     
     # Determinar el ganador
-    resultado = determinar_ganador(usuario, computadora)
+    resultado: str = determinar_ganador(usuario, computadora)
     print(resultado)
